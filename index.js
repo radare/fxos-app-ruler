@@ -31,27 +31,30 @@ function init() {
 
 	var untilinch = untilcm/inchratio;
 	var str = "";
-	str += "<div class='deepfont' style='position:absolute;top:5mozmm;"+cmpos+":20mozmm'>cm</div>";
-	str += "<div class='deepfont' style='position:absolute;top:5mozmm;"+inchpos+":20mozmm'>inch</div>";
+	var ws = "&nbsp;&nbsp;&nbsp;&nbsp;";
+/*
+	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+cmpos+":30mozmm'>&nbsp;cm&nbsp;</div>";
+	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+inchpos+":30mozmm'>inch</div>";
+*/
 	for (var cm=0; cm<untilcm; cm++) {
 		var pos = 10 + (cm*10);
-		var line = (cmpos=="left")?("_____ "+cm):(cm+" _____");
+		var line = (cmpos=="left")?("_____ "+cm):(cm+" _____"+ws);
 		str += "<div style='font-weight:bold;position:absolute;"+cmpos+":0mozmm;top:"+pos+"mozmm'>"+line+"</div>";
 		if (cm+1<untilcm)
 		for (var mm=1;mm<10;mm++) {
 			var pos = 10 + (cm*10) + mm;
-			var line = (mm==5)? "__": "_";
+			var line = ((mm==5)? "__": "_") + ws;
 			str += "<div style='position:absolute;"+cmpos+":0mozmm;top:"+pos+"mozmm'>"+line+"</div>";
 		}
 	}
 	for (var inch=0; inch<untilinch; inch++) {
 		var pos = 10 + (inch*10*2.54);
-		var line = (inchpos=="left")?("_____ "+inch):(inch+" _____");
+		var line = (inchpos=="left")?("_____ "+inch):(inch+" _____"+ws);
 		str += "<div style='font-weight:bold;position:absolute;"+inchpos+":0mozmm;top:"+pos+"mozmm'>"+line+"</div>";
 		if (inch+1<untilinch)
 		for (var mi=1;mi<16;mi++) {
 			var pos = 10 + (inch*10*2.54) + (1.60*mi);
-			var line = (mi==8)?"___":(mi%2)? "_": "__";
+			var line = ((mi==8)?"___":(mi%2)? "_": "__")+ws;
 			str += "<div style='position:absolute;"+inchpos+":0mozmm;top:"+pos+"mozmm'>"+line+"</div>";
 		}
 	}

@@ -1,53 +1,18 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=false" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Ruler</title>
-    <style>
-html,body {
-	height: 170mozmm;
-	overflow-x: hidden;
-	overflow-y: scroll;
-background: #fff94c; /* Old browsers */
-background: -moz-linear-gradient(left,  #fff94c 0%, #ffdb28 15%, #ffc300 28%, #ffdb28 32%, #ffdb28 68%, #ffc300 71%, #ffdb28 86%, #fff94c 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fff94c), color-stop(15%,#ffdb28), color-stop(28%,#ffc300), color-stop(32%,#ffdb28), color-stop(68%,#ffdb28), color-stop(71%,#ffc300), color-stop(86%,#ffdb28), color-stop(100%,#fff94c)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  #fff94c 0%,#ffdb28 15%,#ffc300 28%,#ffdb28 32%,#ffdb28 68%,#ffc300 71%,#ffdb28 86%,#fff94c 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  #fff94c 0%,#ffdb28 15%,#ffc300 28%,#ffdb28 32%,#ffdb28 68%,#ffc300 71%,#ffdb28 86%,#fff94c 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  #fff94c 0%,#ffdb28 15%,#ffc300 28%,#ffdb28 32%,#ffdb28 68%,#ffc300 71%,#ffdb28 86%,#fff94c 100%); /* IE10+ */
-background: linear-gradient(to right,  #fff94c 0%,#ffdb28 15%,#ffc300 28%,#ffdb28 32%,#ffdb28 68%,#ffc300 71%,#ffdb28 86%,#fff94c 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff94c', endColorstr='#fff94c',GradientType=1 ); /* IE6-9 */
+<html>
+<head>
+    <meta charset="utf-8"> </meta>
+</head>
+<body style="overflow:hidden; margin:0px">
 
+<iframe id="iframe" frameborder="0" style="height: 100%; overflow:scroll;border-right:10px;width: 100%" src="ruler.html" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+<script>
+function removescrollbar() {
+	var w = window.innerWidth;
+	var i = document.getElementById ('iframe');
+	i.style.width=w+18;
 }
-table,body {
-	background-color:#FFFB00;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	border:0px;
-	padding:0px;
-	margin:0px;
-}
-a {
-	font-size:1.4em; font-family: monospace; color:white; text-decoration:none;color:#00ccff;
-}
-.marks {
-	width: 100%;
-	
-}
-div {
-	font-family: Helvetica;
-}
-.deepfont {
-	font-family: Arial, sans-serif;
-	color: #606030;
-	font-weight: bold;
-	font-size:2.5mozmm;
-}
-  </style>
- </head>
- <script src="index.js"></script>
- <body id="body">
-  <div id="marks" class="marks"></div>
- </body>
+removescrollbar();
+window.onresize = removescrollbar;
+</script>
+</body>
 </html>
