@@ -1,0 +1,36 @@
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=false" />
+  </head>
+<body>
+  
+<script>
+if (navigator.mozApps && navigator.mozApps.install) {
+document.write('<button id="install">'+
+  'Install Ruler app'+
+  '</button>');
+(function(){
+  function install(ev) {
+    ev.preventDefault();
+    // define the manifest URL
+    var manifest_url = "http://nimiali.ffos.lolcathost.org/packaged.webapp";
+    // install the app
+    var myapp = navigator.mozApps.installPackage(manifest_url);
+    myapp.onsuccess = function(data) {
+      // App is installed, remove button
+      this.parentNode.removeChild(this);
+    };
+    myapp.onerror = function() {
+      alert ("oops "+this.error.name);
+      // App wasn't installed, info is in
+      // installapp.error.name
+     };
+  };
+  // get a reference to the button and call install() on click
+  var button = document.getElementById('install');
+  button.addEventListener('click', install, false);
+})();
+}
+</script>
+</body>
+</html>
