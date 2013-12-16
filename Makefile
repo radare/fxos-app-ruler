@@ -1,6 +1,6 @@
 all:
 	rm -f ruler.zip
-	zip ruler.zip indes.js index.html *.png *.webapp
+	zip ruler.zip index.js index.html *.png *.webapp
 
 push:
 	scp packaged.webapp radare.org:/srv/http/ffos/ruler
