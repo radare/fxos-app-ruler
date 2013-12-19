@@ -1,18 +1,9 @@
 <html>
-<head>
+  <head>
     <meta charset="utf-8"> </meta>
-</head>
-<body style="overflow:hidden; margin:0px">
-
-<iframe id="iframe" frameborder="0" style="height: 100%; overflow:scroll;border-right:10px;width: 100%" src="ruler.html" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-<script>
-function removescrollbar() {
-	var w = window.innerWidth;
-	var i = document.getElementById ('iframe');
-	i.style.width = w+18;
-}
-removescrollbar();
-window.onresize = removescrollbar;
-</script>
-</body>
+    <script src="index.js"></script>
+  </head>
+  <body style="overflow:hidden; margin:0px">
+    <iframe id="iframe" frameborder="0" style="height: 100%; overflow:scroll;border-right:10px;width: 100%" src="ruler.html" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+  </body>
 </html>
