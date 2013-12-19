@@ -1,4 +1,4 @@
-var untilcm = 16; // use pinch to enlarge it!
+var untilcm = 21; // use pinch to enlarge it!
 const inchratio = 2.54;
 var cmpos = "right";
 var inchpos = "left";
@@ -32,6 +32,9 @@ function init() {
 	var untilinch = untilcm/inchratio;
 	var str = "";
 	var ws = "&nbsp;&nbsp;&nbsp;&nbsp;";
+
+	str += "<br /><center style='color:#707070' onclick='swap()'>"+
+		((cmpos=="right")?"inch / cm":"cm / inch")+"</center>";
 /*
 	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+cmpos+":30mozmm'>&nbsp;cm&nbsp;</div>";
 	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+inchpos+":30mozmm'>inch</div>";
@@ -66,6 +69,8 @@ function init() {
 		memo_right = str;
 	}
 	m.innerHTML = str;
+	document.getElementById("swap-button").onclick = swap;
 }
-window.onclick = swap;
+
+//window.onclick = swap;
 window.onload = init;
