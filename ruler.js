@@ -1,7 +1,7 @@
 var untilcm = 21; // use pinch to enlarge it!
 const inchratio = 2.54;
-var cmpos = "right";
-var inchpos = "left";
+var cmpos = "left";
+var inchpos = "right";
 
 function swap() {
 	if (cmpos=="right") {
@@ -16,6 +16,20 @@ function swap() {
 
 var memo_left = undefined;
 var memo_right = undefined;
+var lockscroll = false;
+
+function swaplock() {
+	var body = document.getElementById('html');
+	if (lockscroll) {
+		body.height = '100%';
+	} else {
+		body.height = '100%';
+		body.overflowY = 'scroll';
+	}
+body.style['background-color'] = 'red';
+	lockscroll = !lockscroll;
+alert (lockscroll);
+}
 
 function init() {
 	var m = document.getElementById("marks");
@@ -35,6 +49,10 @@ function init() {
 
 	str += "<br /><center style='color:#707070' onclick='swap()'>"+
 		((cmpos=="right")?"inch / cm":"cm / inch")+"</center>";
+/*
+	str += "<br /><center style='color:#707070' onclick='swaplock()'>"+
+		((lockscroll)?"unlock":"lock")+"</center>";
+*/
 /*
 	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+cmpos+":30mozmm'>&nbsp;cm&nbsp;</div>";
 	str += "<div class='deepfont' style='position:absolute;top:2mozmm;"+inchpos+":30mozmm'>inch</div>";
